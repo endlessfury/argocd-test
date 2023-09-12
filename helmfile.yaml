@@ -1,0 +1,18 @@
+releases:
+  - name: mongodb
+    chart: bitnami/mongodb
+    version: 13.9.1
+    values:
+      - auth:
+          rootPassword: root
+          usernames: [root]
+          passwords: [root]
+          databases: [db]
+        persistence:
+          enabled: false
+          storageClass: nfs-client
+          size: 1Gi
+
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
